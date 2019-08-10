@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Third Party">
+      <UniqueIdentifier>{1d5da2d4-1e55-448c-926e-903160cbae56}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Third Party\pugixml">
+      <UniqueIdentifier>{27801334-99c5-45ea-8f2f-1510d003f62d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Third Party\ScriptHookV">
+      <UniqueIdentifier>{30ee2c84-54d6-423c-910c-a1a076880ebf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Third Party\fmt">
+      <UniqueIdentifier>{c70646ce-d9a1-4486-9cb3-f50b98c474e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Third Party\simpleini">
+      <UniqueIdentifier>{8e7314ca-ac16-4283-b44a-1ff484e7bcb3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\ThirdParty\pugixml\pugixml.cpp">
+      <Filter>Third Party\pugixml</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Script.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ThirdParty\fmt\src\format.cc">
+      <Filter>Third Party\fmt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ThirdParty\fmt\src\posix.cc">
+      <Filter>Third Party\fmt</Filter>
+    </ClCompile>
+    <ClCompile Include="Logger.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Figure.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Util.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ThirdParty\simpleini\ConvertUTF.c">
+      <Filter>Third Party\simpleini</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\ThirdParty\pugixml\pugiconfig.hpp">
+      <Filter>Third Party\pugixml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ThirdParty\pugixml\pugixml.hpp">
+      <Filter>Third Party\pugixml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ThirdParty\ScriptHookV\inc\nativeCaller.h">
+      <Filter>Third Party\ScriptHookV</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ThirdParty\ScriptHookV\inc\natives.h">
+      <Filter>Third Party\ScriptHookV</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ThirdParty\ScriptHookV\inc\types.h">
+      <Filter>Third Party\ScriptHookV</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ThirdParty\ScriptHookV\inc\enums.h">
+      <Filter>Third Party\ScriptHookV</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ThirdParty\ScriptHookV\inc\main.h">
+      <Filter>Third Party\ScriptHookV</Filter>
+    </ClInclude>
+    <ClInclude Include="Script.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ThirdParty\fmt\include\fmt\chrono.h">
+      <Filter>Third Party\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ThirdParty\fmt\include\fmt\color.h">
+      <Filter>Third Party\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ThirdParty\fmt\include\fmt\core.h">
+      <Filter>Third Party\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ThirdParty\fmt\include\fmt\format-inl.h">
+      <Filter>Third Party\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ThirdParty\fmt\include\fmt\format.h">
+      <Filter>Third Party\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ThirdParty\fmt\include\fmt\locale.h">
+      <Filter>Third Party\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ThirdParty\fmt\include\fmt\ostream.h">
+      <Filter>Third Party\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ThirdParty\fmt\include\fmt\posix.h">
+      <Filter>Third Party\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ThirdParty\fmt\include\fmt\printf.h">
+      <Filter>Third Party\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ThirdParty\fmt\include\fmt\ranges.h">
+      <Filter>Third Party\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ThirdParty\fmt\include\fmt\time.h">
+      <Filter>Third Party\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="Header.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Logger.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Figure.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Util.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Constants.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ThirdParty\simpleini\ConvertUTF.h">
+      <Filter>Third Party\simpleini</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ThirdParty\simpleini\SimpleIni.h">
+      <Filter>Third Party\simpleini</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
