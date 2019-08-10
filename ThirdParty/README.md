@@ -9,6 +9,7 @@ http://www.dev-c.com/gtav/scripthookv/ (Download SDK)
 
 # fmt
 Put files from include/fmt/ to ThirdParty/fmt/
+
 Put files from src/ to ThirdParty/fmt/src/
 
 # pugixml
@@ -19,4 +20,5 @@ Put files (ConvertUTF.c, ConvertUTF.h, SimpleIni.h) from simpleini-4.17/ to Thir
 
 # ScriptHookV SDK
 Put files from inc/ to ThirdParty/ScriptHookV/inc/
+
 Put files from lib/ to ThirdParty/ScriptHookV/lib/
