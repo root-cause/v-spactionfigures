@@ -1,7 +1,10 @@
 # Third Party Information
 https://github.com/fmtlib/fmt/releases
+
 https://github.com/zeux/pugixml/releases
+
 https://github.com/brofield/simpleini/releases
+
 http://www.dev-c.com/gtav/scripthookv/ (Download SDK)
 
 # fmt
