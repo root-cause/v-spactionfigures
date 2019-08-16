@@ -19,6 +19,8 @@ Put files from src/ to ThirdParty/pugixml/
 Put files (ConvertUTF.c, ConvertUTF.h, SimpleIni.h) from simpleini-4.17/ to ThirdParty/simpleini/
 
 # ScriptHookV SDK
+This project uses a modified natives.h and nativeCaller.h, don't replace them with ScriptHookV SDK ones.
+
 Put files from inc/ to ThirdParty/ScriptHookV/inc/
 
 Put files from lib/ to ThirdParty/ScriptHookV/lib/

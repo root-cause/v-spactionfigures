@@ -17,7 +17,8 @@ size_t g_numCollected = 0;
 size_t g_numTotal = 0;
 bool g_hasCollectedAll = false;
 bool g_isAtComicStore = false;
-fs::path g_modDir = fs::current_path().append("mod_" + Constants::ModName);
+fs::path g_modDir = fs::current_path().append(fmt::format("mod_{}", Constants::ModName));
+fs::path g_localAppDataDir = Util::GetModDataPath(fmt::format("mod_{}", Constants::ModName));
 std::vector<Figure> g_figures;
 std::string g_storeInfoText;
 
@@ -74,7 +75,7 @@ void SaveFigures()
 		figureNode.append_attribute("collected") = figure.IsCollected();
 	}
 
-	fs::path figureDataPath = g_modDir;
+	fs::path figureDataPath = g_localAppDataDir;
 	figureDataPath.append("figures.xml");
 
 	doc.save_file(figureDataPath.c_str(), "\t", pugi::format_default | pugi::format_no_declaration);
@@ -84,10 +85,50 @@ void ScriptInit()
 {
 	ScriptLog.Write(LogLevel::LOG_DEBUG, "ScriptInit called");
 
+	// Reset globals
+	g_numCollected = 0;
+	g_numTotal = 0;
+	g_hasCollectedAll = false;
+	g_isAtComicStore = false;
+	g_figures.clear();
+
+	// Make sure local appdata directory exists
+	if (!fs::exists(g_localAppDataDir))
+	{
+		ScriptLog.Write(LogLevel::LOG_DEBUG, fmt::format("Creating local appdata directory: {}", g_localAppDataDir.generic_string()));
+
+		if (fs::create_directory(g_localAppDataDir))
+		{
+			ScriptLog.Write(LogLevel::LOG_INFO, "Created local appdata directory");
+		}
+		else
+		{
+			ScriptLog.Write(LogLevel::LOG_ERROR, "Failed to create local appdata directory");
+		}
+	}
+
 	// Load figure data
-	fs::path figureDataPath = g_modDir;
+	fs::path figureDataPath = g_localAppDataDir;
 	figureDataPath.append("figures.xml");
 	ScriptLog.Write(LogLevel::LOG_DEBUG, fmt::format("Figures path: {}", figureDataPath.generic_string()));
+
+	// Make sure figures.xml exists in local appdata
+	if (!fs::exists(figureDataPath))
+	{
+		ScriptLog.Write(LogLevel::LOG_DEBUG, "Copying figures.xml to local appdata");
+
+		fs::path backupPath = g_modDir;
+		backupPath.append("figures.xml");
+
+		ScriptLog.Write(LogLevel::LOG_DEBUG, fmt::format("backupPath: {}", backupPath.generic_string()));
+		ScriptLog.Write(LogLevel::LOG_DEBUG, fmt::format("figureDataPath: {}", figureDataPath.generic_string()));
+
+		try {
+			fs::copy_file(backupPath, figureDataPath);
+		} catch (fs::filesystem_error& e) {
+			ScriptLog.Write(LogLevel::LOG_ERROR, fmt::format("Failed to copy figures.xml: {}", e.what()));
+		}
+	}
 
 	pugi::xml_document doc;
 	pugi::xml_parse_result result = doc.load_file(figureDataPath.c_str());

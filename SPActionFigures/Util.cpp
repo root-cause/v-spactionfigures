@@ -87,4 +87,22 @@ namespace Util
 			STATS::STAT_SET_INT(totalEarnedStat, currentTotalEarned + amount, true);
 		}
 	}
+
+	fs::path GetModDataPath(const std::string& dirName)
+	{
+		fs::path path;
+		PWSTR appDataPath = NULL;
+
+		if (SUCCEEDED(SHGetKnownFolderPath(FOLDERID_LocalAppData, 0, NULL, &appDataPath)))
+		{
+			path = fs::path(appDataPath).append(dirName);
+			CoTaskMemFree(appDataPath);
+		}
+		else
+		{
+			path = fs::current_path().append(dirName);
+		}
+
+		return path;
+	}
 }
