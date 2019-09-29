@@ -201,6 +201,12 @@ void ScriptInit()
 		for (Figure& figure : g_figures) figure.CreateBlip();
 	}
 
+	// Don't try to show notifications while loading screen is active
+	while (DLC::GET_IS_LOADING_SCREEN_ACTIVE())
+	{
+		WAIT(0);
+	}
+
 	// Store message
 	if (g_comicStoreMessages)
 	{
